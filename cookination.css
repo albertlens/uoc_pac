@@ -1,0 +1,739 @@
+/* Definició de Font(s) de Google */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Definició dels meus colors pel web */
+:root {
+    --TextiFonsFosc: #2A2A2A ;
+    --TextiFonsMenysFosc: rgba(0, 0, 0, 0.2);
+    --TextClar: #FFFFFF;
+    --ColorPrincipal: #79BAAB;
+    --ColorPrincipalClar: #C5E1DB;
+    --contrast: #DC4A23;
+    --contrastclar: #EB9781;
+    --ColorBody: #FFF7E8;
+  }
+
+body {
+    margin: 0;
+    background-color: var(--ColorBody);
+}
+
+header {
+    z-index: 1;
+    top:0;
+    position: sticky;
+    padding-top: 10px;
+    text-align: center;
+    background-color: var(--TextClar);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: -2px -2px 4px 4px rgba(0, 0, 0, 0.2); */
+    /* padding: 10px 30px 10px 25px; */
+}
+
+header .headercontainer {
+    max-width: 1200px;
+}
+
+header img {
+    max-width: 125px;
+}
+
+header nav ul {
+    font-size: x-small;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+
+header nav ul li::after {
+    content: "";
+    margin-right: 15px;
+    color: transparent;
+}
+header nav ul li:last-child::after {
+    content: none;
+}
+
+header nav ul li a {
+    color: var(--TextiFonsFosc);
+    text-decoration: none;
+    font-size: small;
+}
+
+header nav ul li.active {
+    font-weight: 600;
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 5px;
+}
+
+header nav ul li a:hover {
+    color: var(--ColorPrincipal);
+    text-decoration-color: var(--ColorPrincipal);
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+.subheadingarea h1 {
+    text-transform: none;
+}
+
+.subheadingarea {
+    text-align: center;
+    overflow:hidden;
+    background-image: url("img/knife-bg.jpg");
+    background-size:cover; 
+    background-repeat: no-repeat;
+    height: 225px;
+    display: grid;
+    place-items: center center;
+}
+
+.subheadingarea h1 {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.searchform {
+    width:100%;
+    max-width: 350px;
+}
+
+.subheadingarea div {
+    margin: 0 30px 0 30px;
+    width:70%;
+    box-sizing: border-box;
+}
+
+main {
+    margin: 0 auto;
+    min-width: auto;
+    max-width: 1200px;
+    width: 95%;
+}
+
+.recipes_page main {
+    display: grid;
+    grid-template-areas:
+    "head"
+    "recipes"
+    "pager";
+}
+
+aside {
+    display: none;
+    grid-area: aside;
+    background-color: var(--TextClar);
+    height:100%;
+}
+
+.recipes_page .recipesarea {
+    grid-area: recipes;
+    border: solid navy 5px;
+    height:100%;
+}
+
+.recipes_page .recipes_head{
+    grid-area: head;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.shop_head, .videos_head {
+    grid-area: head;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.pager_area {
+    grid-area: pager;
+    margin: 0 auto;
+    padding: 15px 0 15px 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pager_area ul {
+    align-items: center;
+    display: inline-flex;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.pager_area ul li a {
+    text-decoration: none;
+    color: var(--ColorPrincipal);
+}
+
+.pager_area ul li a:hover {
+    color: var(--ColorPrincipalClar);
+}
+
+.pager_area .active {
+    color: var(--TextiFonsFosc);
+}
+
+h2 span {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%; 
+    text-align: center; 
+    line-height: 0.1em;
+    text-transform: uppercase;
+}
+
+h2 span.shorterline {
+    margin: 0 auto;
+}
+
+h2.longline span::before, h2.longline span::after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 3px solid var(--TextiFonsFosc);
+}
+
+.innershop h2 {
+    /* width: 80%; */
+    margin: 0 auto;
+}
+
+.innershop h2 span::before, .innershop h2 span::after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 3px solid var(--TextiFonsFosc);
+    /* margin: auto; */
+}
+
+.recipes_page input[type="search"] {
+    margin-left: 5px;
+}
+
+input[type="search"] {
+    margin: 0;
+    font-size: 14px;
+    color: inherit;
+    border-radius: 5px;
+    border: 2px solid var(--ColorPrincipal);
+    width: 80%;
+    max-width: 500px;
+    padding: 10px 4px 10px 50px;
+    background: white url("img/icons/search.svg") no-repeat 13px center;
+    background-size: 18px;
+  }
+  
+input[type="search"]:focus { 
+    outline: none !important;
+    border-color: var(--TextiFonsFosc);
+    box-shadow: 0 0 10px var(--ColorPrincipal);
+ }
+
+.recipes_page input[type="search"] {
+    width: 90%;
+    max-width: 500px;
+ }
+
+input[type="search"]::placeholder {
+    color: var(--TextiFonsFosc);
+    opacity: .3;
+ }
+
+.latestmeals, .recipes_area, .shop_area {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content:space-between;
+    gap: 20px;
+ }
+
+.videos_area {
+    display:grid;
+    grid-template-columns: 1fr;
+    justify-content:space-between;
+    gap: 20px;
+ }
+
+.latestmeals img, .pick img, .recipes_area img, .shop_area img {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    /* object-fit: scale-down; */
+}
+
+.videos_area .video {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.videos_area iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.videos_area .explanation {
+    padding: 5px 10px 10px 10px;
+    background-color: var(--TextClar);
+}
+.explanation p {
+    margin-top:0;
+}
+
+.explanation h3 {
+    margin-bottom:10px;
+    text-transform: uppercase;
+
+}
+
+.latestmeals figure, .pick figure, .recipes_area figure, .shop_area figure {
+      padding: 0;
+      margin: 0 0 10px 0;
+}
+
+.latestmeals figcaption, .recipes_area figcaption, .shop_area figcaption, form h3 {
+    font-weight: 900;
+    font-size:small;
+    text-transform: uppercase;
+}
+
+.latestmeals article h3, .recipes_area article h3, .shop_area article h3 {
+      display: none;
+}
+
+article.shop {
+    grid-column: span 2;
+    background-image: url("img/shop-bg.jpg");
+    background-size:cover; 
+    background-repeat: no-repeat;
+    height: 22em;
+    display: grid;
+    place-items: center center;
+}
+
+article.shop .innershop {
+    box-sizing: border-box;
+    text-align: center;
+    width: 80%;
+    background-color: white;
+    box-shadow: 4px 4px 3px 3px var(--TextiFonsMenysFosc);
+    padding: 40px;
+    border: 1px solid var(--TextiFonsMenysFosc);
+}
+
+
+div.button {
+    margin-bottom: 20px;
+}
+
+.pick a.button {
+    text-decoration: none;
+    background-color: var(--TextClar);
+    border: 1px solid var(--ColorPrincipal);
+    color: var(--ColorPrincipal);
+    border-radius: 4px;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+}
+
+.pick a.button:hover {
+    background-color: var(--ColorPrincipal);
+    color: var(--TextClar);
+}
+
+.fondopng {
+    background: var(--ColorPrincipal);
+    text-align: center;
+    padding-bottom: 25px;
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.fondopng h3,.fondopng form {
+    position: relative;
+    z-index: 2;
+}
+
+.fondopng p {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.fondopng::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    z-index: 1;
+    opacity: 0.15;
+    background-image: url("img/doodle.png");
+    background-repeat:repeat;
+    background-size:contain;
+}
+
+.newsletter input[type=submit] {
+    font-size:small;
+    border-style: none;
+    background-color: var(--contrast);
+    color: var(--TextClar);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+.newsletter input[type=submit]:hover {
+    background-color: var(--contrastclar);
+    cursor: pointer; 
+}
+
+.newsletter input[type=email] {
+    font-size:small;
+    width: 60vw;
+    padding: 10px;
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid var(--ColorPrincipal);
+    margin-right: 7px;
+}
+
+
+.fondopng h3 {
+    text-transform: uppercase;
+}
+
+.newsletter a.button:hover {
+    background-color: var(--contrastclar);
+    color: var(--TextClar);
+}
+
+form {
+    display:inline-block;
+    place-items: center;
+}
+
+.pick h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: 900;    
+    font-size: x-large;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.shop_rest a {
+    color: var(--contrast);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.shop_rest a:hover {
+    color: var(--contrastclar);
+}
+
+@media (min-width: 768px) {
+    .latestmeals  {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+    .recipes_area, .shop_area {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .shop_rest {
+        margin: 0 auto;
+        /* place-items: center; */
+        text-align: center;
+        /* align-self: center; */
+        /* box-sizing: border-box; */
+        width: 80%;
+        /* box-shadow: 4px 4px 3px 3px var(--TextiFonsMenysFosc); */
+        /* padding: 80px!important; */
+        /* margin: 50px; */
+        /* border: 1px solid var(--TextiFonsMenysFosc); */
+    }
+
+    .innershop {
+        width: 70%!important;
+    }
+
+    .subheadingarea h1 {
+        margin-bottom: 20px;
+    }
+   
+    .innershop h2 {
+        width: 50%;
+    }
+
+    .newsletter input[type=email] {
+        max-width: 200px;
+    }
+
+    .videos_area {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content:space-between;
+        gap: 20px;
+    }
+    article.shop {
+        grid-column: span 4;
+    }
+    .pick{
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 20px;
+    }
+    header {
+        position: inherit;
+    }
+    header .headercontainer {
+        max-width: 1200px;
+        width: 95%;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        padding: 0;
+        padding-bottom: 10px;
+        place-items: center;
+    }
+
+    footer .footercontainer {
+        max-width: 1200px;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    header .logo {
+        justify-self: start;
+    }
+    header .navmenu {
+        justify-self: end;
+    }
+
+    header .navmenu nav ul {
+        margin: 0;
+    }
+
+    .pick .image {
+        align-self: center;
+        max-height: 100%;
+    }
+
+    .pick p {
+        font-size: 90%;
+    }
+
+    .footercontainer .socialnetworks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+
+    .footercontainer .rest {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+
+    .footercontainer .socialnetworks .recipes {
+        grid-column: 1;
+        align-self: center;
+        justify-self: start;
+        max-width: 200px;
+    }
+
+    .footercontainer .rest .copyright {
+        grid-column: 1;
+        align-self: center;
+        justify-self: start;
+        text-align: left;
+    }
+    .footercontainer .socialnetworks .social {
+        /* grid-column: 2; */
+        align-self: center;
+        justify-self: end;
+        /* display:inline-flex; */
+        /* display: grid; */
+        /* grid-template-columns: 1fr 1fr; */
+        place-items: center center;
+    }
+
+    .social ul {
+        align-items: center;
+        display: inline-flex;
+        gap: 10px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        align-self: center;
+    }
+
+    .footercontainer .rest .footermenu {
+        grid-column: 2;
+        align-self: center;
+        justify-self: end;
+    }
+
+    /* .footercontainer .socialnetworks .social div p {
+        margin: 0;
+    } */
+
+    .footercontainer .rest p, .footercontainer .rest ul {
+        margin: 0;
+    }
+
+    .highlighted {
+        margin: 0;
+        text-align: left;
+    }
+
+    .recipes_page main {
+        display: grid;
+        grid-template-areas:
+        "head head"
+        "aside recipes"
+        "aside pager";
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .shop_page main {
+        display: grid;
+        grid-template-areas:
+        "head head"
+        "aside shop"
+        "aside pager";
+        grid-template-columns: 1fr 3fr;
+    }
+    aside {
+        display:unset!important;
+        margin-right: 20px;
+        padding-left: 20px;
+    }
+    .recipes_head ,.shop_head, .videos_head{
+        text-align: left!important;
+    }
+}
+
+footer {
+    padding: 15px;
+    background-color: var(--TextiFonsFosc);
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    align-self: center;
+}
+
+footer .social img {
+    align-self: center;
+}
+
+.recipes_area a, .shop_area a, .latestmeals article figcaption a {
+    text-decoration: none;
+    color: var(--TextiFonsFosc);
+}
+
+footer a:hover, .recipes_area a:hover, .shop_area a:hover, .latestmeals article figcaption a:hover {
+    border: none;
+    color: var(--ColorPrincipal);
+}
+
+.social a:hover {
+    border: none;
+    opacity: 0.7;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social ul li:first-child {
+    display: block;
+    margin-bottom: 5px;
+}
+
+footer ul li {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+footer ul li:last-child::after {
+    content: "";
+}
+
+p.highlighted {
+    font-weight: 600;
+}
+
+.socialnetworks a + a {
+    padding: 7px;
+}
+
+.socialnetworks {
+    border-bottom: 1px solid var(--TextClar);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+form ul {
+    list-style: none;
+    margin-bottom: 25px;
+    margin-top: 0px;
+    padding: 0;
+    font-size: small;
+}
+
+form h3 {
+    margin-left: 5px;
+    font-size: inherit;
+    margin-bottom: 5px;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: var(--ColorPrincipal);
+}
+
+form label {
+    margin-left: 5px;
+}
+
+.videos_area article {
+    margin-bottom: 30px;
+}
